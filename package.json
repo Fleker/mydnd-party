@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "One-stopshop!",
   "engines": {
-    "node": "5.9.1"
+    "node": "^8.0.0"
   },
   "main": "index.js",
   "scripts": {
