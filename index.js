@@ -35,6 +35,10 @@ app.get('/felkerland', (req, res) => {
 });
 
 // Campaign shortlink
+app.get('/c', (request, response) => {
+    response.render('pages/campaign');
+    return;
+});
 app.get('/campaign', (request, response) => {
     response.render('pages/campaign');
     return;
@@ -48,8 +52,8 @@ app.get('/search', (request, response) => {
 
 // Custom generators
 app.get('/generators/:name', (request, response) => {
-    const name = request.params.name;
-    const page = 'pages/index';
+    const {name} = request.params;
+    let page = 'pages/index';
     switch(name) {
         case "backstory":
         case "character":
@@ -71,8 +75,8 @@ app.get('/generators/:name', (request, response) => {
 
 // Custom tables
 app.get('/tables/:name', (request, response) => {
-    const name = request.params.name;
-    const page = 'pages/index';
+    const {name} = request.params;
+    let page = 'pages/index';
     switch(name) {
         case "camp":
         case "camping":
@@ -91,8 +95,8 @@ app.get('/tables/:name', (request, response) => {
 
 // Custom tools
 app.get('/tools/:name', (request, response) => {
-    const name = request.params.name;
-    const page = 'pages/index';
+    const {name} = request.params;
+    let page = 'pages/index';
     switch(name) {
         case 'time':
         case 'clock':
@@ -104,8 +108,8 @@ app.get('/tools/:name', (request, response) => {
 
 // Custom lists
 app.get('/lists/:name', (request, response) => {
-    const name = request.params.name;
-    const page = 'pages/index';
+    const {name} = request.params;
+    let page = 'pages/index';
     switch(name) {
         case 'town':
         case 'city':
@@ -181,8 +185,8 @@ app.get('/blog/:id', (request, response) => {
 
 // Other links from around the web
 app.get('/links/:name', (request, response) => {
-    var name = request.params.name;
-    var page = 'pages/index';
+    const {name} = request.params;
+    let page = 'pages/index';
     switch(name) {
         case 'metals':
             page = 'https://olddungeonmaster.wordpress.com/2016/12/02/dd-5e-metals/';
